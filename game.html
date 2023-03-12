@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tabootbl</title>
+      <link rel="stylesheet" href="static/style.css">
+      <!-- link per le icone supportate-->
+      <!-- https://fontawesome.com/v4/icon/check -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <section class="turno-squadra-1">
+        <h3>E' il turno della squadra arancione</h3>
+        <h7>Passa il dispositivo al suggeritore</h7>
+        <button onClick="gioca()">Gioca!</button>
+      </section>
+      <section class="turno-squadra-2">
+        <h3>E' il turno della squadra blu</h3>
+        <h7>Passa il dispositivo al suggeritore</h7>
+        <button onClick="gioca()">Gioca!</button>
+      </section>
+      <section class="gioco">
+         <!-- HEADER -->
+         <section class="header">
+            <div class="riga">
+               <div class="cerchio">
+                  <div class="countdown">60.0</div>
+               </div>
+               <div class="parte1"><span id="parte1">0</span></div>
+               <div class="parte2"><span id="parte2">0</span></div>
+            </div>
+         </section>
+         <!--PLAYER CARD-->
+         <section id = "playerCard">
+            <div class="card-container">
+               <div class="card">
+                  <div class="front">
+                     <h2 class="full-name" id="playerFullName"></h2>
+                     <div class="image-container-wrapper">
+                        <div class="image-container">
+                           <img id="playerImage" src="" alt="immagine">
+                        </div>
+                     </div>
+                     <div class="forbidden-words">
+                        <ul id="list-forbidden-words">
+                           <li>
+                              <div></div>
+                           </li>
+                           <li>
+                              <div></div>
+                           </li>
+                           <li>
+                              <div></div>
+                           </li>
+                           <li>
+                              <div></div>
+                           </li>
+                           <li>
+                              <div></div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="back">
+                     <h2>TABOOTBL</h2>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- BUTTONS -->
+         <section class="buttons">
+            <div class="buttons-container">
+               <ul>
+                  <li>
+                     <button id="pass" type="button" onClick="pass()">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                        <span id="pass-icon">
+                           <div class="pass-counter">
+                              <span id="pass-counter-value"></span>
+                           </div>
+                        </span>
+                     </button>
+                  </li>
+                  <li>
+                     <button id="fail" type="button" onClick="fail()">
+                     <i class="fa fa-times" aria-hidden="true"></i>
+                     </button>
+                  </li>
+                  <li>
+                     <button id="correct" type="button" onClick="correct()">
+                     <i class="fa fa-check" aria-hidden="true"></i>
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </section>
+      </section>
+      <script src="static/script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   </body>
+</html>

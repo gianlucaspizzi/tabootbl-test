@@ -1,0 +1,491 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: #373F51;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+  transition: background-color 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+
+.green-background {
+  background-color: #38733c;
+}
+
+.red-background {
+  background-color: #a80101;
+}
+
+.turno-squadra-1 {
+  background-color: #f8c22e;
+  height: 101vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.turno-squadra-2 {
+  background-color: #173dd9;
+  height: 101vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*SEZIONE HEADER*/
+.riga {
+  display: flex;
+  height: 80px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5%;
+  margin-left: 15%; 
+  margin-right: 15%;
+}
+
+.parte1,
+.parte2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.parte1 {
+  background-color: #f8c22e;
+  color: white;
+  font-weight: bolder;
+}
+
+.parte2 {
+  background-color: #173dd9;
+  color: white;
+  font-weight: bolder;
+}
+
+
+.cerchio {
+  color: #223843;
+  font-weight: bolder;
+  width: 80px;
+  height: 80px;
+  background-color: #DBD3D8;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.5s ease;
+  transition: all 0.1s;
+}
+
+.cerchio.orange {
+  color: rgb(223, 73, 8);
+}
+
+.cerchio.red {
+  color: #DE1A1A;
+}
+
+.cerchio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: inherit;
+  border: 2px solid #DE1A1A;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+
+/*CARTA*/
+.card {
+  margin: auto;
+  margin-top: 1%;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+  height: 370px;
+  width: 950px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card div {
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.back {
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+
+  transform: rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.full-name {
+  margin-top: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+}
+
+.image-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+}
+
+.image-container {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: 3px solid black;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#playerImage {
+  transition: filter 0.5s ease-out;
+}
+
+#playerImage.blur {
+  filter: blur(5px);
+}
+
+.forbidden-words {
+  margin-top: 1%;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: 'Merriweather', serif;
+}
+
+.forbidden-words ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.forbidden-words li {
+  display: inline-block;
+}
+
+.forbidden-words div {
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #a80101;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 3px solid #a6aaae;
+}
+
+
+
+/* SEZIONE BUTTONS */
+.buttons {
+  margin-top: 0.7%;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons ul li {
+  margin: 0 20px;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.buttons button {
+  border: 4px solid #a6aaae; /* bordo grigio metallico */
+  color: white;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 58px;
+  height: 58px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  z-index: 1;
+  background-color: #4CAF50;
+  box-shadow: 
+    0px 0px 10px rgba(0, 0, 0, 0.3),
+    0px 0px 20px rgba(255, 255, 255, 0.3) inset,
+    0px 0px 5px rgba(255, 255, 255, 0.5) inset;
+}
+
+#pass {
+  background-color: #dfcb88;
+  position: relative;
+}
+
+#pass-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a80101;
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  z-index: 1;
+}
+
+.pass-counter {
+  background-color: #a80101;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+  z-index: 1;
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+
+#pass-counter-value {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+
+#fail {
+  background-color: #a80101;
+  width: 80px;
+  height: 80px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#fail i {
+  font-size: 2.5em;
+  position: relative;
+}
+
+#correct {
+  background-color: #4CAF50;
+}
+
+.buttons button:hover {
+  background-color: #3e8e41;
+  box-shadow: 
+    0px 0px 10px rgba(0, 0, 0, 0.5),
+    0px 0px 20px rgba(255, 255, 255, 0.5) inset;
+}
+
+.buttons button:active {
+  top: 4px;
+  box-shadow: none;
+}
+
+.buttons i {
+  font-size: 2em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.buttons button:active i {
+  transform: translateY(4px);
+}
+
+/* AGGIUNTE */
+.buttons button:focus {
+  outline: none; /* Rimuove l'outline di default del focus */
+}
+
+.buttons button:disabled {
+  opacity: 0.6; /* Opacità ridotta per i bottoni disabilitati */
+  cursor: not-allowed; /* Cambia il cursore quando il bottone è disabilitato */
+}
+
+.buttons button .material-icons {
+  font-size: 28px; /* Aumenta la dimensione dell'icona */
+  margin-top: 2px; /* Aggiunge un po' di spazio tra l'icona e il testo */
+}
+
+.buttons button .btn-text {
+  margin-left: 8px; /* Aggiunge un po' di spazio tra l'icona e il testo */
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Stili per schermi medi */
+@media (max-width: 768px) {
+  .riga {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .image-container-wrapper{
+    margin-left: 5%;
+  }
+  .forbidden-words ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    margin: auto;
+    margin-top: 7%;
+    height: 580px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .forbidden-words li {
+    display: block;
+  }
+  .forbidden-words div {
+    font-size: calc(16px + 1vw);
+    padding: 8px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .buttons {
+    margin-top: 7%;
+  }
+}
+
+/* Stili per schermi piccoli */
+@media (max-width: 480px) {
+  .riga {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .image-container-wrapper{
+    margin-left: 5%;
+  }
+
+  .card {
+    margin: auto;
+    margin-top: 7%;
+    height: 580px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .forbidden-words ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forbidden-words li {
+    display: block;
+  }
+  .forbidden-words div {
+    font-size: calc(16px + 1vw);
+    padding: 8px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .buttons {
+    margin-top: 7%;
+  }
+}
+
+
+
