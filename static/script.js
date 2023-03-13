@@ -35,6 +35,10 @@ var playerName = document.getElementById("playerFullName");
 var playerImage = document.getElementById("playerImage");
 var forbiddenWords = document.getElementById("list-forbidden-words");
 
+var correctAudio = null;
+var wrongAudio = null;
+var passAudio = null;
+
 var passValue = 2;
 document.getElementById("pass-counter-value").innerHTML = passValue;
 
@@ -155,6 +159,8 @@ function getRandomPlayer(players) {
 }
 
 function pass() {
+  playAudio(passAudio);
+
   const parteDaAggiornare = document.getElementById("pass-counter-value");
   const currentVal = parseInt(parteDaAggiornare.innerText);
   const newVal = currentVal - 1;
@@ -174,6 +180,8 @@ function pass() {
 }
 
 function correct() {
+  playAudio(correctAudio);
+
   const parteDaAggiornare = currentlyPlaying == 0? document.getElementById("parte1") : document.getElementById("parte2");
   const currentVal = parseInt(parteDaAggiornare.innerText);
   const newVal = currentVal + 1;
@@ -194,6 +202,8 @@ function correct() {
 }
 
 function fail() {
+  playAudio(wrongAudio);
+
   const parteDaAggiornare = currentlyPlaying == 0? document.getElementById("parte1") : document.getElementById("parte2");
   const currentVal = parseInt(parteDaAggiornare.innerText);
   if(0 != currentVal) {
@@ -220,6 +230,12 @@ function fail() {
       document.body.classList.remove("red-background");
     }, 500);
   }
+}
+
+function playAudio(audio) {
+  setTimeout(() => {
+    audio.play();
+  }, 120);
 }
 
 const card = document.querySelector('.card');
@@ -256,6 +272,14 @@ function updateHTMLWithNewPlayer() {
   playerImage.src = buildImgSrc(newPlayer.imageName);
   forbiddenWords.innerHTML = buildRelatedWords(newPlayer.relatedWords);
 }
+
+document.getElementById("correctAudio")
+
+window.addEventListener('load', function() {
+  correctAudio = document.getElementById("correctAudio");
+  wrongAudio = document.getElementById("wrongAudio");
+  passAudio = document.getElementById("passAudio");
+});
 
 window.addEventListener('load', function() {
   turno2.style.display = "none";
